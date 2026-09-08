@@ -1,12 +1,435 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>MyPatientHUB</title>
-</head>
-<body>
-    <h1>MyPatientHUB</h1>
-    
-</body>
+
+    <link rel="stylesheet" href="css/style.css" />
+     <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <div id="dashboard-page" class="dashboard-page">
+      <header id="dashboard-header" class="dashboard-header">
+        <div class="header-left">
+          <button
+            id="sidebar-toggle"
+            class="header-menu-button"
+            type="button"
+            aria-label="Toggle sidebar"
+            data-action="toggle-sidebar"
+          >
+            ☰
+          </button>
+
+          <div id="breadcrumb" class="breadcrumb">
+            <span class="breadcrumb-item">Dashboard</span>
+          </div>
+
+          <h1 id="dashboard-title" class="dashboard-title">Dashboard</h1>
+        </div>
+
+        <div class="header-right">
+          <div id="search-container" class="search-container">
+            <label for="dashboard-search" class="visually-hidden">
+              Search
+            </label>
+
+            <input
+              id="dashboard-search"
+              class="dashboard-search"
+              type="search"
+              name="search"
+              placeholder="Search..."
+              autocomplete="off"
+              data-action="dashboard-search"
+            />
+          </div>
+
+          <button
+            id="settings-button"
+            class="header-icon-button"
+            type="button"
+            aria-label="Settings"
+            data-action="open-settings"
+          >
+            ⚙
+          </button>
+
+          <button
+            id="notifications-button"
+            class="header-icon-button"
+            type="button"
+            aria-label="Notifications"
+            data-action="open-notifications"
+          >
+            🔔
+          </button>
+
+          <button
+            id="logout-button"
+            class="logout-button"
+            type="button"
+            data-action="logout"
+          >
+            Logout
+          </button>
+        </div>
+      </header>
+
+      <nav
+        id="sidebar-navigation"
+        class="sidebar-navigation"
+        aria-label="Main navigation"
+      >
+        <div id="sidebar-brand" class="sidebar-brand">
+          <a href="#dashboard" class="brand-link" data-page="dashboard">
+            <span class="brand-name">MyPatientHUB</span>
+          </a>
+        </div>
+
+        <ul id="main-navigation-list" class="main-navigation-list">
+          <li class="navigation-item active">
+            <a href="#dashboard" class="navigation-link" data-page="dashboard">
+              <span class="navigation-icon">▦</span>
+              <span class="navigation-text">Dashboard</span>
+            </a>
+          </li>
+
+          <li class="navigation-item">
+            <a
+              href="#appointments"
+              class="navigation-link"
+              data-page="appointments"
+            >
+              <span class="navigation-icon">▣</span>
+              <span class="navigation-text">Appointments</span>
+            </a>
+          </li>
+
+          <li class="navigation-item">
+            <a
+              href="#find-doctor"
+              class="navigation-link"
+              data-page="find-doctor"
+            >
+              <span class="navigation-icon">♙</span>
+              <span class="navigation-text">Find Doctor</span>
+            </a>
+          </li>
+
+          <li class="navigation-item">
+            <a
+              href="#find-clinic"
+              class="navigation-link"
+              data-page="find-clinic"
+            >
+              <span class="navigation-icon">⌂</span>
+              <span class="navigation-text">Find Clinic</span>
+            </a>
+          </li>
+
+          <li class="navigation-item">
+            <a href="#chat" class="navigation-link" data-page="chat">
+              <span class="navigation-icon">◌</span>
+              <span class="navigation-text">Chat</span>
+            </a>
+          </li>
+
+          <li class="navigation-item">
+            <a
+              href="#marketplace"
+              class="navigation-link"
+              data-page="marketplace"
+            >
+              <span class="navigation-icon">🛒</span>
+              <span class="navigation-text">Find MarketPlace</span>
+            </a>
+          </li>
+
+          <li class="navigation-item">
+            <a href="#pharmacy" class="navigation-link" data-page="pharmacy">
+              <span class="navigation-icon">✚</span>
+              <span class="navigation-text">Find Pharmacy</span>
+            </a>
+          </li>
+
+          <li class="navigation-item">
+            <a
+              href="#dependents"
+              class="navigation-link"
+              data-page="dependents"
+            >
+              <span class="navigation-icon">♧</span>
+              <span class="navigation-text">My Dependents</span>
+            </a>
+          </li>
+
+          <li class="navigation-item">
+            <a href="#account" class="navigation-link" data-page="account">
+              <span class="navigation-icon">♙</span>
+              <span class="navigation-text">My Account</span>
+            </a>
+          </li>
+
+          <li class="navigation-item">
+            <a href="#settings" class="navigation-link" data-page="settings">
+              <span class="navigation-icon">⚙</span>
+              <span class="navigation-text">Settings</span>
+            </a>
+          </li>
+        </ul>
+
+        <div id="sidebar-help" class="sidebar-help">
+          <button
+            id="help-button"
+            class="help-button"
+            type="button"
+            data-action="open-help"
+          >
+            <span class="help-icon">?</span>
+            <span class="help-text">Help</span>
+          </button>
+        </div>
+      </nav>
+
+      <main id="dashboard-main" class="dashboard-main">
+        <section
+          id="dashboard-section"
+          class="dashboard-section"
+          aria-labelledby="dashboard-welcome"
+        >
+          <div id="dashboard-heading" class="dashboard-heading">
+            <h2 id="dashboard-welcome" class="dashboard-welcome">
+              Welcome To MyPatientHUB!
+            </h2>
+          </div>
+
+          <div id="dashboard-grid" class="dashboard-grid">
+            <article
+              id="clinics-promotion-card"
+              class="dashboard-card"
+              data-card-type="clinic-promotion"
+            >
+              <div class="card-header">
+                <div class="card-title-container">
+                  <h3 class="card-title">Promotion by Clinics</h3>
+                </div>
+
+                <button
+                  class="card-more-button"
+                  type="button"
+                  data-action="view-clinic-details"
+                >
+                  MORE DETAILS
+                </button>
+              </div>
+
+              <div class="card-chart-container">
+                <img
+                  src="assets/images/promotion_by_clinics.png"
+                  alt="Clinic promotion chart"
+                  class="card-chart"
+                  id="clinics-promotion-chart"
+                />
+              </div>
+
+              <div class="card-list">
+                <div class="card-list-item" data-clinic="clinic-1">
+                  <span class="list-item-name"> Clinic 1 </span>
+
+                  <span class="list-item-value"> 50% </span>
+                </div>
+
+                <div class="card-list-item" data-clinic="clinic-2">
+                  <span class="list-item-name"> Clinic 2 </span>
+
+                  <span class="list-item-value"> 30% </span>
+                </div>
+
+                <div class="card-list-item" data-clinic="clinic-3">
+                  <span class="list-item-name"> Clinic 3 </span>
+
+                  <span class="list-item-value"> 20% </span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              id="pharmacies-promotion-card"
+              class="dashboard-card"
+              data-card-type="pharmacy-promotion"
+            >
+              <div class="card-header">
+                <div class="card-title-container">
+                  <h3 class="card-title">Promotion by Pharmacies</h3>
+                </div>
+
+                <button
+                  class="card-more-button"
+                  type="button"
+                  data-action="view-pharmacy-details"
+                >
+                  MORE DETAILS
+                </button>
+              </div>
+
+              <div class="card-chart-container">
+                <img
+                  src="assets/images/promotion_by_pharmacies.png"
+                  alt="Pharmacy promotion chart"
+                  class="card-chart"
+                  id="pharmacies-promotion-chart"
+                />
+              </div>
+
+              <div class="card-list">
+                <div class="card-list-item" data-pharmacy="pharmacy-1">
+                  <span class="list-item-name"> Pharmacy 1 </span>
+
+                  <span class="list-item-value"> 50% </span>
+                </div>
+
+                <div class="card-list-item" data-pharmacy="pharmacy-2">
+                  <span class="list-item-name"> Pharmacy 2 </span>
+
+                  <span class="list-item-value"> 30% </span>
+                </div>
+
+                <div class="card-list-item" data-pharmacy="pharmacy-3">
+                  <span class="list-item-name"> Pharmacy 3 </span>
+
+                  <span class="list-item-value"> 20% </span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              id="smart-market-card"
+              class="dashboard-card market-card"
+              data-card-type="smart-market"
+            >
+              <div class="card-header">
+                <div class="card-title-container">
+                  <h3 class="card-title">Smart Market Usage by app</h3>
+                </div>
+
+                <button
+                  class="card-more-button"
+                  type="button"
+                  data-action="view-market-details"
+                >
+                  MORE DETAILS
+                </button>
+              </div>
+
+              <div class="card-chart-container">
+                <img
+                  src="assets/images/smart_market_usage_by_app.png"
+                  alt="Smart Market usage chart"
+                  class="card-chart"
+                  id="smart-market-chart"
+                />
+              </div>
+
+              <div class="card-list">
+                <div class="card-list-item" data-app="food-panda">
+                  <span class="list-item-name"> Food Panda </span>
+
+                  <span class="list-item-value"> 25% </span>
+                </div>
+
+                <div class="card-list-item" data-app="grab-food">
+                  <span class="list-item-name"> Grab Food </span>
+
+                  <span class="list-item-value"> 3% </span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              id="health-index-card"
+              class="dashboard-card health-card"
+              data-card-type="health-index"
+            >
+              <div class="card-header">
+                <div class="card-title-container">
+                  <h3 class="card-title">Health Index</h3>
+                </div>
+
+                <button
+                  class="card-more-button"
+                  type="button"
+                  data-action="view-health-details"
+                >
+                  MORE DETAILS
+                </button>
+              </div>
+
+              <div id="health-index-content" class="health-index-content">
+                <div class="health-index-value-container">
+                  <span id="health-index-value" class="health-index-value">
+                    70%
+                  </span>
+
+                  <span
+                    id="health-index-change"
+                    class="health-index-change"
+                    data-value="3"
+                  >
+                    +3%
+                  </span>
+                </div>
+
+                <div id="health-index-chart" class="health-index-chart">
+                  <svg
+                    class="health-trend-line"
+                    viewBox="0 0 500 150"
+                    preserveAspectRatio="none"
+                    aria-label="Health Index trend"
+                    role="img"
+                  >
+                    <polyline
+                      points="0,120 50,100 100,110 150,80 200,90 250,60 300,75 350,45 400,55 450,30 500,40"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer id="dashboard-footer" class="dashboard-footer">
+        <div class="footer-copyright">
+          <p>© 2024 MyPatientHUB. All rights reserved.</p>
+        </div>
+
+        <nav
+          id="footer-navigation"
+          class="footer-navigation"
+          aria-label="Footer navigation"
+        >
+          <a href="#privacy" class="footer-link" data-page="privacy">
+            Privacy Policy
+          </a>
+
+          <a href="#terms" class="footer-link" data-page="terms">
+            Terms & Conditions
+          </a>
+
+          <a href="#contact" class="footer-link" data-page="contact">
+            Contact Us
+          </a>
+        </nav>
+      </footer>
+    </div>
+
+   
+  </body>
 </html>
