@@ -1,11 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyPatientHUB</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>MyPatientHUB Dashboard</title>
+      <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
+
 </head>
-<body>
+<body> 
+    <header id="dashboard-header" class="dashboard-header">
+ 
+        <div id="header-left" class="header-left">
+ 
+            <div id="breadcrumb" class="breadcrumb"> 
+ 
+                <span id="breadcrumb-home">⌂</span>
+ 
+                <span id="breadcrumb-separator">/</span>
+ 
+                <span id="breadcrumb-current">Dashboard</span>
+
+            </div>
+ 
+            <h1 id="page-title">Dashboard</h1>
+
+        </div>
+
+ 
+        <button
+            id="menu-button"
+            class="menu-button"
+            type="button"
+            aria-label="Toggle sidebar"
+            aria-controls="sidebar-navigation">
+        
+            ☰
+        </button>
+
+           
+
+        
+
+ 
+        <div id="header-right" class="header-right">
+ 
+            <div id="search-box" class="search-box">
+ 
+                <span id="search-icon">⌕</span>
+ 
+                <input
+                    type="search"
+                    id="search-input"
+                    class="search-input"
+                    placeholder="Type here..."
+                    aria-label="Search">
+
+            </div>
+
+ 
+            <button
+                id="logout-button"
+                class="header-button"
+                type="button">
+                ◉&nbsp;
+                Log out
+            </button>
+
+ 
+            <button
+                id="header-settings-button"
+                class="icon-button"
+                type="button"
+                aria-label="Settings">
+ 
+                ⚙
+
+            </button>
+
+ 
+            <button
+                id="notifications-button"
+                class="icon-button"
+                type="button"
+                aria-label="Notifications">
+
+          
+                🔔
+
+            </button>
+
+        </div>
+
+    </header>
+
+ 
+    <nav
+        id="sidebar-navigation"
+        class="sidebar-navigation"
+        aria-label="Main navigation">
+
+        
+        <div id="sidebar-logo" class="sidebar-logo">
+               
+                <div id="logo-mark" class="logo-mark">
+                    M<span>HUB</span>
+                </div>
+ 
+                <span id="brand-name"> MyPatientHUB</span>
+        </div>
+
+
+       
+        <a
+            href="#dashboard-section"
+            id="nav-dashboard"
+            class="nav-item active"
+            data-page="dashboard">
+
+            <span class="nav-icon">▣</span>          
+            <span class="nav-label">Dashboard</span>
+        </a>
+
+        <a
+            href="#appointments"
+            id="nav-appointments"
+            class="nav-item"
+            data-page="appointments">
+ 
+            <span class="nav-icon">▤</span>
+            <span class="nav-label">Appointments</span>
+        </a>
+
+        <a
+            href="#find-doctor"
+            id="nav-find-doctor"
+            class="nav-item"
+            data-page="find-doctor">
+
+            <span class="nav-icon">♙</span>
+            <span class="nav-label">Find Doctor</span>
+        </a>
+
+        <a
+            href="#find-clinic"
+            id="nav-find-clinic"
+            class="nav-item"
+            data-page="find-clinic">
+
+            <span class="nav-icon">▰</span>
+            <span class="nav-label">Find Clinic</span>
+        </a>
+
+ 
+        <a
+            href="#chat"
+            id="nav-chat"
+            class="nav-item"
+            data-page="chat">
+
+            <span class="nav-icon">▤</span>
+            <span class="nav-label">Chat</span>
+        </a>
+
+        <a
+            href="#marketplace"
+            id="nav-marketplace"
+            class="nav-item"
+            data-page="marketplace">
+
+            <span class="nav-icon">▤</span>
+            <span class="nav-label">Find MarketPlace</span>
+        </a>
+
+        <a
+            href="#pharmacy"
+            id="nav-pharmacy"
+            class="nav-item"
+            data-page="pharmacy">
+            <span class="nav-icon">▣</span>
+            <span class="nav-label">Find Pharmacy</span>
+        </a>
+
+        <a
+            href="#dependents"
+            id="nav-dependents"
+            class="nav-item"
+            data-page="dependents">
+
+            <span class="nav-icon">▤</span>
+            <span class="nav-label">My Dependents</span>
+        </a>
+
+        <a
+            href="#account"
+            id="nav-account"
+            class="nav-item"
+            data-page="account">
+
+            <span class="nav-icon">⚒</span>
+            <span class="nav-label">My Account</span>
+        </a>
+
+        <a
+            href="#settings"
+            id="nav-settings"
+            class="nav-item"
+            data-page="settings">
+
+            <span class="nav-icon">⚙</span>
+            <span class="nav-label">Settings</span>
+        </a>
+
+        <button
+            id="help-button"
+            class="help-button"
+            type="button"
+            aria-label="Help">
+            ?
+        </button>
+    </nav>
+
+
+    <main id="dashboard-main" class="dashboard-main">
+        
+        <section
+            id="dashboard-section"
+            class="dashboard-section"
+            aria-labelledby="dashboard-welcome">
+
+            <h2 id="dashboard-welcome">Welcome To MyPatientHUB!</h2>
+
+
+            <div class="cards">
+                <img src="assets/images/promotion_by_clinics.png" alt="Promotion by clinics chart!">
+            </div>
+
+            
+            <div class="cards">
+                <img src="assets/images/promotion_by_pharmacies.png" alt="Promotion by pharmacies chart!">
+            </div>
+
+            
+            <div class="cards">
+                <img src="assets/images/smart_market_usage_by_app.png" alt="Smart market usage by app chart!">
+            </div>
+
+            
+            <div class="cards">
+                <img src="assets/images/health_index.png" alt="Health index chart!">
+            </div>
+
+    </main>
+
+
+ 
+  
+    <footer id="dashboard-footer" class="dashboard-footer">
+      
+        <p id="copyright-text">
+            © 2026, made with
+            <span id="heart-icon">♥</span>
+            by <strong>MyPatientHUB</strong>
+            for a better web.
+
+        </p>
+
+        <nav
+            id="footer-navigation"
+            aria-label="Footer navigation">
+
+         
+            <a
+                href="#dashboard-section"
+                id="footer-home-link">
+                MyPatientHUB
+            </a>
+
+         
+            <a
+                href="#about-us"
+                id="footer-about-link">
+                About Us
+            </a>
+
     
+            <a
+                href="#blog"
+                id="footer-blog-link">
+                Blog
+            </a>
+
+        </nav>
+
+    </footer>
+
 </body>
 </html>
