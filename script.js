@@ -57,10 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         navItems.forEach(function (item) {
 
-            const label = item
-                .querySelector(".nav-label")
-                .textContent
-                .toLowerCase();
+            const label = item.querySelector(".nav-label").textContent.toLowerCase();
 
             if (label.includes(searchValue)) {
                 item.style.display = "flex";
@@ -73,26 +70,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    searchInput.addEventListener("search", function () {
+    // searchInput.addEventListener("search", function () {
 
-        if (searchInput.value === "") {
+    //     if (searchInput.value === "") {
 
-            navItems.forEach(function (item) {
-                item.style.display = "flex";
-            });
+    //         navItems.forEach(function (item) {
+    //             item.style.display = "flex";
+    //         });
 
-        }
+    //     }
 
-    });
+    // });
 
 
     logoutButton.addEventListener("click", function () {
 
         const logoutConfirm = confirm("Are you sure you want to log out?");
-
-        if (logoutConfirm) {
-            alert("You have been logged out.");
-        }
 
     });
 
@@ -137,25 +130,21 @@ document.addEventListener("DOMContentLoaded", function () {
             nav.classList.remove("active");
         });
 
-        document
-            .getElementById("nav-dashboard")
-            .classList.add("active");
+        document.getElementById("nav-dashboard").classList.add("active");
 
-        document
-            .getElementById("dashboard-section")
-            .scrollIntoView({
+        document.getElementById("dashboard-section").scrollIntoView({
                 behavior: "smooth"
             });
 
     });
 
 
-    window.addEventListener("resize", function () {
+    // window.addEventListener("resize", function () {
 
-        if (window.innerWidth > 768) {
-            sidebar.classList.remove("active");
-        }
+    //     if (window.innerWidth > 768) {
+    //         sidebar.classList.remove("active");
+    //     }
 
-    });
+    // });
 
 });
