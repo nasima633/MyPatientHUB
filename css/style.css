@@ -3,6 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+#logout-button a {
+    text-decoration: none;
+    color: gray;
+}
+#logout-button a {
+    text-decoration: none;
+    color: gray;
+}
 
 html {
   scroll-behavior: smooth;
