@@ -1,120 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>MyPatientHUB Dashboard</title>
-      <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPatientHUB Dashboard</title>
+    <link rel="icon" type="image/png" href="assets/icon/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
     <script src="script.js" defer></script>
-
 </head>
-<body> 
-    <header id="dashboard-header" class="dashboard-header">
- 
-        <div id="header-left" class="header-left">
- 
-            <div id="breadcrumb" class="breadcrumb"> 
- 
-                <span id="breadcrumb-home">⌂</span>
- 
-                <span id="breadcrumb-separator">/</span>
- 
-                <span id="breadcrumb-current">Dashboard</span>
 
+<body>
+
+    <header class="dashboard-header" id="dashboard-header">
+
+        <div class="header-left" id="header-left">
+            <div class="info-left-header" id="info-left-header">
+                <span id="info-home">⌂</span>
+                <span id="info-separator">/</span>
+                <span id="info-current">Dashboard</span>
             </div>
- 
-            <h1 id="page-title">Dashboard</h1>
-
+            <h1 id="dashboard-title">
+                Dashboard
+            </h1>
         </div>
 
- 
         <button
             id="menu-button"
             class="menu-button"
             type="button"
-            aria-label="Toggle sidebar">
-        
+            aria-label="Toggle sidebar"
+            aria-expanded="false">
             ☰
         </button>
 
- 
-        <div id="header-right" class="header-right">
- 
-            <div id="search-box" class="search-box">
- 
-                <span id="search-icon">⌕</span>
- 
+        <div class="header-right" id="header-right">
+
+            <div class="search-box" id="search-box">
+                <span id="search-icon">
+                    🔎
+                </span>
                 <input
                     type="search"
                     id="search-input"
                     class="search-input"
                     placeholder="Type here..."
-                    aria-label="Search">
-
+                    aria-label="Search navigation">
             </div>
 
- 
             <button
                 id="logout-button"
                 class="header-button"
-                type="button"><a href="login.html">◉&nbsp;
-                Log out</a>
-                
+                type="button">
+                👤 Log out
             </button>
 
- 
             <button
                 id="header-settings-button"
                 class="icon-button"
                 type="button"
                 aria-label="Settings">
- 
                 ⚙
-
             </button>
 
- 
             <button
                 id="notifications-button"
                 class="icon-button"
                 type="button"
                 aria-label="Notifications">
-
-          
                 🔔
-
             </button>
-
         </div>
-
     </header>
 
- 
     <nav
-        id="sidebar-navigation"
         class="sidebar-navigation"
+        id="sidebar-navigation"
         aria-label="Main navigation">
 
-        
-        <div id="sidebar-logo" class="sidebar-logo">
-               
-                <div id="logo-mark" class="logo-mark">
-                    M<span>HUB</span>
-                </div>
- 
-                <span id="brand-name"> MyPatientHUB</span>
+        <div
+            id="sidebar-logo"
+            class="sidebar-logo">
+            <div
+                id="logo-mark"
+                class="logo-mark">
+                M<span>HUB</span>
+            </div>
+            <span id="brand-name">
+                MyPatientHUB
+            </span>
         </div>
 
-
-       
         <a
             href="#dashboard-section"
             id="nav-dashboard"
             class="nav-item active"
             data-page="dashboard">
-
-            <span class="nav-icon">▣</span>          
-            <span class="nav-label">Dashboard</span>
+            <span class="nav-icon">
+                ▣
+            </span>
+            <span class="nav-label">
+                Dashboard
+            </span>
         </a>
 
         <a
@@ -122,40 +110,51 @@
             id="nav-appointments"
             class="nav-item"
             data-page="appointments">
- 
-            <span class="nav-icon">▤</span>
-            <span class="nav-label">Appointments</span>
+            <span class="nav-icon">
+                ▤
+            </span>
+            <span class="nav-label">
+                Appointments
+            </span>
         </a>
 
         <a
-            href="#find-doctor"
+            href="FindDoctorpage/finddoctor.html"
             id="nav-find-doctor"
             class="nav-item"
             data-page="find-doctor">
-
-            <span class="nav-icon">♙</span>
-            <span class="nav-label">Find Doctor</span>
+            <span class="nav-icon">
+                ♙
+            </span>
+            <span class="nav-label">
+                Find Doctor
+            </span>
         </a>
 
         <a
-            href="#find-clinic"
+            href="FindClinicpage/findclinic.html"
             id="nav-find-clinic"
             class="nav-item"
             data-page="find-clinic">
-
-            <span class="nav-icon">▰</span>
-            <span class="nav-label">Find Clinic</span>
+            <span class="nav-icon">
+                🏥
+            </span>
+            <span class="nav-label">
+                Find Clinic
+            </span>
         </a>
 
- 
         <a
             href="#chat"
             id="nav-chat"
             class="nav-item"
             data-page="chat">
-
-            <span class="nav-icon">▤</span>
-            <span class="nav-label">Chat</span>
+            <span class="nav-icon">
+                ▤
+            </span>
+            <span class="nav-label">
+                Chat
+            </span>
         </a>
 
         <a
@@ -163,9 +162,12 @@
             id="nav-marketplace"
             class="nav-item"
             data-page="marketplace">
-
-            <span class="nav-icon">▤</span>
-            <span class="nav-label">Find MarketPlace</span>
+            <span class="nav-icon">
+                ▤
+            </span>
+            <span class="nav-label">
+                Find MarketPlace
+            </span>
         </a>
 
         <a
@@ -173,8 +175,12 @@
             id="nav-pharmacy"
             class="nav-item"
             data-page="pharmacy">
-            <span class="nav-icon">▣</span>
-            <span class="nav-label">Find Pharmacy</span>
+            <span class="nav-icon">
+                ▣
+            </span>
+            <span class="nav-label">
+                Find Pharmacy
+            </span>
         </a>
 
         <a
@@ -182,9 +188,12 @@
             id="nav-dependents"
             class="nav-item"
             data-page="dependents">
-
-            <span class="nav-icon">▤</span>
-            <span class="nav-label">My Dependents</span>
+            <span class="nav-icon">
+                ▤
+            </span>
+            <span class="nav-label">
+                My Dependents
+            </span>
         </a>
 
         <a
@@ -192,9 +201,12 @@
             id="nav-account"
             class="nav-item"
             data-page="account">
-
-            <span class="nav-icon">⚒</span>
-            <span class="nav-label">My Account</span>
+            <span class="nav-icon">
+                ⚒
+            </span>
+            <span class="nav-label">
+                My Account
+            </span>
         </a>
 
         <a
@@ -202,9 +214,12 @@
             id="nav-settings"
             class="nav-item"
             data-page="settings">
-
-            <span class="nav-icon">⚙</span>
-            <span class="nav-label">Settings</span>
+            <span class="nav-icon">
+                ⚙
+            </span>
+            <span class="nav-label">
+                Settings
+            </span>
         </a>
 
         <button
@@ -216,79 +231,77 @@
         </button>
     </nav>
 
-
-    <main id="dashboard-main" class="dashboard-main">
-        
+    <main>
         <section
             id="dashboard-section"
-            class="dashboard-section"
-            aria-labelledby="dashboard-welcome">
+            class="dashboard-section">
 
-            <h2 id="dashboard-welcome">Welcome To MyPatientHUB!</h2>
-
+            <h2 id="dashboard-welcome-txt">
+                Welcome To MyPatientHUB!
+            </h2>
 
             <div class="cards">
-                <img src="assets/images/promotion_by_clinics.png" alt="Promotion by clinics chart!">
+                <img
+                    src="assets/images/promotion_by_clinics.png"
+                    alt="Promotion by clinics">
             </div>
 
-            
             <div class="cards">
-                <img src="assets/images/promotion_by_pharmacies.png" alt="Promotion by pharmacies chart!">
+                <img
+                    src="assets/images/promotion_by_pharmacies.png"
+                    alt="Promotion by pharmacies">
             </div>
 
-            
             <div class="cards">
-                <img src="assets/images/smart_market_usage_by_app.png" alt="Smart market usage by app chart!">
+                <img
+                    src="assets/images/smart_market_usage_by_app.png"
+                    alt="Smart market usage by app">
             </div>
 
-            
             <div class="cards">
-                <img src="assets/images/health_index.png" alt="Health index chart!">
+                <img
+                    src="assets/images/health_index.png"
+                    alt="Health index">
             </div>
-
+        </section>
     </main>
 
-
- 
-  
-    <footer id="dashboard-footer" class="dashboard-footer">
-      
+    <footer
+        id="dashboard-footer"
+        class="dashboard-footer">
         <p id="copyright-text">
             © 2026, made with
-            <span id="heart-icon">♥</span>
-            by <strong>MyPatientHUB</strong>
+            <span id="heart-icon">
+                ♥
+            </span>
+            by
+            <strong>
+                MyPatientHUB
+            </strong>
             for a better web.
-
         </p>
 
         <nav
             id="footer-navigation"
             aria-label="Footer navigation">
-
-         
             <a
                 href="#dashboard-section"
                 id="footer-home-link">
                 MyPatientHUB
             </a>
-
-         
             <a
                 href="#about-us"
                 id="footer-about-link">
                 About Us
             </a>
-
-    
             <a
                 href="#blog"
                 id="footer-blog-link">
                 Blog
             </a>
-
         </nav>
-
     </footer>
 
 </body>
+
 </html>
