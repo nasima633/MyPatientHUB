@@ -1,0 +1,521 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MyPatientHUB - Find Doctor</title>
+
+    <link rel="icon" type="image/png" href="../assets/icon/favicon.ico" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="finddoctor.css" />
+
+    <script src="finddoctor.js" defer></script>
+  </head>
+
+  <body>
+    <header class="dashboard-header" id="dashboard-header">
+      <div class="header-left" id="header-left">
+        <div class="info-left-header" id="info-left-header">
+          <span id="info-home">⌂</span>
+
+          <span id="info-separator">/</span>
+
+          <span id="info-current"> Find Doctor </span>
+        </div>
+
+        <h1 id="dashboard-title">Find Doctor</h1>
+      </div>
+
+      <button
+        id="menu-button"
+        class="menu-button"
+        type="button"
+        aria-label="Toggle sidebar"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <div class="header-right" id="header-right">
+        <div class="search-box" id="search-box">
+          <span id="search-icon"> 🔎 </span>
+
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Type here..."
+            aria-label="Search navigation"
+            autocomplete="off"
+          />
+        </div>
+
+        <button id="logout-button" class="header-button" type="button">
+          👤 Log out
+        </button>
+
+        <button
+          id="header-settings-button"
+          class="icon-button"
+          type="button"
+          aria-label="Settings"
+        >
+          ⚙
+        </button>
+
+        <button
+          id="notifications-button"
+          class="icon-button"
+          type="button"
+          aria-label="Notifications"
+        >
+          🔔
+        </button>
+      </div>
+    </header>
+
+    <nav
+      class="sidebar-navigation"
+      id="sidebar-navigation"
+      aria-label="Main navigation"
+    >
+      <div id="sidebar-logo" class="sidebar-logo">
+        <div id="logo-mark" class="logo-mark">M<span>HUB</span></div>
+
+        <span id="brand-name"> MyPatientHUB </span>
+      </div>
+
+      <a
+        href="../index.html"
+        id="nav-dashboard"
+        class="nav-item"
+        data-page="dashboard"
+      >
+        <span class="nav-icon">▣</span>
+
+        <span class="nav-label"> Dashboard </span>
+      </a>
+
+      <a
+        href="#appointments"
+        id="nav-appointments"
+        class="nav-item"
+        data-page="appointments"
+      >
+        <span class="nav-icon">▤</span>
+
+        <span class="nav-label"> Appointments </span>
+      </a>
+
+      <a
+        href="finddoctor.html"
+        id="nav-find-doctor"
+        class="nav-item active"
+        data-page="find-doctor"
+      >
+        <span class="nav-icon">♙</span>
+
+        <span class="nav-label"> Find Doctor </span>
+      </a>
+
+      <a
+        href="../FindClinicpage/findclinic.html"
+        id="nav-find-clinic"
+        class="nav-item"
+        data-page="find-clinic"
+      >
+        <span class="nav-icon">🏥</span>
+
+        <span class="nav-label"> Find Clinic </span>
+      </a>
+
+      <a href="#chat" id="nav-chat" class="nav-item" data-page="chat">
+        <span class="nav-icon">▤</span>
+
+        <span class="nav-label"> Chat </span>
+      </a>
+
+      <a
+        href="#marketplace"
+        id="nav-marketplace"
+        class="nav-item"
+        data-page="marketplace"
+      >
+        <span class="nav-icon">▤</span>
+
+        <span class="nav-label"> Find MarketPlace </span>
+      </a>
+
+      <a
+        href="#pharmacy"
+        id="nav-pharmacy"
+        class="nav-item"
+        data-page="pharmacy"
+      >
+        <span class="nav-icon">▣</span>
+
+        <span class="nav-label"> Find Pharmacy </span>
+      </a>
+
+      <a
+        href="#dependents"
+        id="nav-dependents"
+        class="nav-item"
+        data-page="dependents"
+      >
+        <span class="nav-icon">▤</span>
+
+        <span class="nav-label"> My Dependents </span>
+      </a>
+
+      >
+      <a href="#account" id="nav-account" class="nav-item" data-page="account">
+        <span class="nav-icon">⚒</span>
+
+        <span class="nav-label"> My Account </span>
+      </a>
+
+      <a
+        href="#settings"
+        id="nav-settings"
+        class="nav-item"
+        data-page="settings"
+      >
+        <span class="nav-icon">⚙</span>
+
+        <span class="nav-label"> Settings </span>
+      </a>
+
+      <button
+        id="help-button"
+        class="help-button"
+        type="button"
+        aria-label="Help"
+      >
+        ?
+      </button>
+    </nav>
+
+    <main class="find-doctor-main">
+      <section class="doctor-hero">
+        <div class="hero-wave wave-one"></div>
+        <div class="hero-wave wave-two"></div>
+
+        <div class="doctor-hero-content">
+          <h2>Find a Doctor</h2>
+
+          <p>Search Doctors and schedule an appointment</p>
+
+          <div class="doctor-search">
+            <input
+              type="text"
+              id="doctor-name-search"
+              placeholder="Search a doctor by name, speciality"
+            />
+
+            <input
+              type="text"
+              id="location-search"
+              placeholder="Zip Code or Neighborhood"
+            />
+
+            <button
+              type="button"
+              id="current-button"
+              class="doctor-search-button"
+            >
+              CURRENT
+            </button>
+
+            <button
+              type="button"
+              id="doctor-search-button"
+              class="doctor-search-button"
+            >
+              SEARCH
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="doctor-section services-section">
+        <h2>Special Services</h2>
+
+        <div class="services-grid">
+          <div class="service-item">
+            <div class="service-card">
+              <div class="service-icon primary-icon">❤️</div>
+
+              <div class="service-text">
+                <h3>Primary Care and Internal MD</h3>
+
+                <p>
+                  Our Doctors Partner with you to help you to reach your
+                  wellness
+                </p>
+              </div>
+
+              <button
+                class="dropdown-button"
+                type="button"
+                aria-expanded="false"
+              >
+                ⌄
+              </button>
+            </div>
+
+            <div class="service-dropdown">
+              <p>
+                Our primary care doctors provide comprehensive medical care and
+                help patients maintain their overall health and wellness.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-card">
+              <div class="service-icon emergency-icon">🩺</div>
+
+              <div class="service-text">
+                <h3>Emergency Care</h3>
+
+                <p>We provide emergency care for adults and children</p>
+              </div>
+
+              <button
+                class="dropdown-button"
+                type="button"
+                aria-expanded="false"
+              >
+                ⌄
+              </button>
+            </div>
+
+            <div class="service-dropdown">
+              <p>
+                Emergency care is available for adults and children who need
+                immediate medical attention.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-card">
+              <div class="service-icon imaging-icon">❤️</div>
+
+              <div class="service-text">
+                <h3>Imaging Services</h3>
+
+                <p>From Xray to MR scan we offer...</p>
+              </div>
+
+              <button
+                class="dropdown-button"
+                type="button"
+                aria-expanded="false"
+              >
+                ⌄
+              </button>
+            </div>
+
+            <div class="service-dropdown">
+              <p>
+                Imaging services include diagnostic procedures such as X-ray and
+                MR scans.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-card">
+              <div class="service-icon urgent-icon">+</div>
+
+              <div class="service-text">
+                <h3>Urgent Care</h3>
+
+                <p>We offer urgent care for non-emergency conditions</p>
+              </div>
+
+              <button
+                class="dropdown-button"
+                type="button"
+                aria-expanded="false"
+              >
+                ⌄
+              </button>
+            </div>
+
+            <div class="service-dropdown">
+              <p>
+                Urgent care services are available for medical conditions that
+                require prompt attention.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="doctor-section specialty-section">
+        <h2>Find Doctors By Specialty</h2>
+
+        <p class="specialty-description">
+          Select a Specialty to View all Doctors and schedule an Appointment
+        </p>
+
+        <div class="specialty-grid">
+          <div class="specialty-item">
+            <button
+              class="specialty-button"
+              type="button"
+              aria-expanded="false"
+            >
+              <span> Anesthesiology </span>
+
+              <span class="specialty-arrow"> ⌄ </span>
+            </button>
+
+            <div class="specialty-content">
+              <p>Doctors specializing in anesthesiology.</p>
+            </div>
+          </div>
+
+          <div class="specialty-item">
+            <button
+              class="specialty-button"
+              type="button"
+              aria-expanded="false"
+            >
+              <span> Dermatology </span>
+
+              <span class="specialty-arrow"> ⌄ </span>
+            </button>
+
+            <div class="specialty-content">
+              <p>Doctors specializing in dermatology.</p>
+            </div>
+          </div>
+
+          <div class="specialty-item">
+            <button
+              class="specialty-button"
+              type="button"
+              aria-expanded="false"
+            >
+              <span> Emergency medicine </span>
+
+              <span class="specialty-arrow"> ⌄ </span>
+            </button>
+
+            <div class="specialty-content">
+              <p>Doctors specializing in emergency medicine.</p>
+            </div>
+          </div>
+
+          <div class="specialty-item">
+            <button
+              class="specialty-button"
+              type="button"
+              aria-expanded="false"
+            >
+              <span> Neurology </span>
+
+              <span class="specialty-arrow"> ⌄ </span>
+            </button>
+
+            <div class="specialty-content">
+              <p>Doctors specializing in neurology.</p>
+            </div>
+          </div>
+
+          <div class="specialty-item">
+            <button
+              class="specialty-button"
+              type="button"
+              aria-expanded="false"
+            >
+              <span> Consultation </span>
+
+              <span class="specialty-arrow"> ⌄ </span>
+            </button>
+
+            <div class="specialty-content">
+              <p>Doctors available for consultation.</p>
+            </div>
+          </div>
+
+          <div class="specialty-item">
+            <button
+              class="specialty-button"
+              type="button"
+              aria-expanded="false"
+            >
+              <span> Ophthalmology </span>
+
+              <span class="specialty-arrow"> ⌄ </span>
+            </button>
+
+            <div class="specialty-content">
+              <p>Doctors specializing in ophthalmology.</p>
+            </div>
+          </div>
+
+          <div class="specialty-item">
+            <button
+              class="specialty-button"
+              type="button"
+              aria-expanded="false"
+            >
+              <span> Cardiology </span>
+
+              <span class="specialty-arrow"> ⌄ </span>
+            </button>
+
+            <div class="specialty-content">
+              <p>Doctors specializing in cardiology.</p>
+            </div>
+          </div>
+
+          <!-- PEDIATRICS -->
+          <div class="specialty-item">
+            <button
+              class="specialty-button"
+              type="button"
+              aria-expanded="false"
+            >
+              <span> Pediatrics </span>
+
+              <span class="specialty-arrow"> ⌄ </span>
+            </button>
+
+            <div class="specialty-content">
+              <p>Doctors specializing in pediatrics.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="dashboard-footer" class="dashboard-footer">
+      <p id="copyright-text">
+        © 2026, made with
+
+        <span id="heart-icon"> ♥ </span>
+
+        by <strong>MyPatientHUB</strong>
+        for a better web.
+      </p>
+
+      <nav id="footer-navigation" aria-label="Footer navigation">
+        <a href="#"> MyPatientHUB </a>
+
+        <a href="#"> About Us </a>
+
+        <a href="#"> Blog </a>
+      </nav>
+    </footer>
+    ```
+  </body>
+</html>

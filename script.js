@@ -1,150 +1,110 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const menuButton = document.getElementById("menu-button");
-    const sidebar = document.getElementById("sidebar-navigation");
+    const menuButton =
+        document.getElementById("menu-button");
 
-    const navItems = document.querySelectorAll(".nav-item");
+    const sidebar =
+        document.getElementById("sidebar-navigation");
 
-    const searchInput = document.getElementById("search-input");
+    const searchInput =
+        document.getElementById("search-input");
 
-    const logoutButton = document.getElementById("logout-button");
+    const notificationsButton =
+        document.getElementById("notifications-button");
 
-    const settingsButton = document.getElementById("header-settings-button");
+    const settingsButton =
+        document.getElementById("header-settings-button");
 
-    const notificationsButton = document.getElementById("notifications-button");
+    const logoutButton =
+        document.getElementById("logout-button");
 
-    const helpButton = document.getElementById("help-button");
-
-    const brandLink = document.getElementById("brand-link");
-
-    const footerHomeLink = document.getElementById("footer-home-link");
-
+    const navItems =
+        document.querySelectorAll(".nav-item");
 
     menuButton.addEventListener("click", function () {
-        sidebar.classList.toggle("active");
+        sidebar.classList.toggle("open");
+
+        const isOpen =
+            sidebar.classList.contains("open");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
     });
 
+    navItems.forEach(function (navItem) {
+        navItem.addEventListener("click", function () {
+            if (window.innerWidth <= 900) {
+                sidebar.classList.remove("open");
 
-    navItems.forEach(function (item) {
-
-        item.addEventListener("click", function () {
-
-            navItems.forEach(function (nav) {
-                nav.classList.remove("active");
-            });
-
-            item.classList.add("active");
-
-            if (window.innerWidth <= 768) {
-                sidebar.classList.remove("active");
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
             }
-
-            const selectedPage = item.dataset.page;
-
-            console.log("Selected page:", selectedPage);
         });
-
     });
-
 
     searchInput.addEventListener("input", function () {
+        const searchText =
+            searchInput.value
+                .trim()
+                .toLowerCase();
 
-        const searchValue = searchInput.value.trim().toLowerCase();
+        navItems.forEach(function (navItem) {
+            const navLabel =
+                navItem.querySelector(".nav-label");
 
-        if (searchValue === "") {
-            return;
-        }
-
-        navItems.forEach(function (item) {
-
-            const label = item.querySelector(".nav-label").textContent.toLowerCase();
-
-            if (label.includes(searchValue)) {
-                item.style.display = "flex";
-            } else {
-                item.style.display = "none";
+            if (!navLabel) {
+                return;
             }
 
+            const navText =
+                navLabel.textContent
+                    .trim()
+                    .toLowerCase();
+
+            if (searchText === "") {
+                navItem.style.display = "flex";
+            } else if (navText.includes(searchText)) {
+                navItem.style.display = "flex";
+            } else {
+                navItem.style.display = "none";
+            }
         });
-
     });
 
+    notificationsButton.addEventListener(
+        "click",
+        function () {
+            alert(
+                "This feature will be added in the future."
+            );
+        }
+    );
 
-    // searchInput.addEventListener("search", function () {
+    settingsButton.addEventListener(
+        "click",
+        function () {
+            alert(
+                "This feature will be added in the future."
+            );
+        }
+    );
 
-    //     if (searchInput.value === "") {
+    logoutButton.addEventListener(
+        "click",
+        function () {
+            const confirmLogout =
+                confirm(
+                    "Are you sure you want to log out?"
+                );
 
-    //         navItems.forEach(function (item) {
-    //             item.style.display = "flex";
-    //         });
-
-    //     }
-
-    // });
-
-
-    logoutButton.addEventListener("click", function () {
-
-        const logoutConfirm = confirm("Are you sure you want to log out?");
-
-    });
-
-
-    settingsButton.addEventListener("click", function () {
-        alert("Settings page will open here.");
-    });
-
-
-    notificationsButton.addEventListener("click", function () {
-        alert("You have no new notifications.");
-    });
-
-
-    helpButton.addEventListener("click", function () {
-        alert("Welcome to MyPatientHUB Help Center.");
-    });
-
-
-    brandLink.addEventListener("click", function (event) {
-
-        event.preventDefault();
-
-        navItems.forEach(function (nav) {
-            nav.classList.remove("active");
-        });
-
-        const dashboardItem = document.getElementById("nav-dashboard");
-
-        dashboardItem.classList.add("active");
-
-        window.location.hash = "dashboard-section";
-
-    });
-
-
-    footerHomeLink.addEventListener("click", function (event) {
-
-        event.preventDefault();
-
-        navItems.forEach(function (nav) {
-            nav.classList.remove("active");
-        });
-
-        document.getElementById("nav-dashboard").classList.add("active");
-
-        document.getElementById("dashboard-section").scrollIntoView({
-                behavior: "smooth"
-            });
-
-    });
-
-
-    // window.addEventListener("resize", function () {
-
-    //     if (window.innerWidth > 768) {
-    //         sidebar.classList.remove("active");
-    //     }
-
-    // });
-
+            if (confirmLogout) {
+                window.location.href =
+                    "LoginPage/logout.html";
+            }
+        }
+    );
 });

@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Find Clinic | MyPatientHUB</title>
+
+    <link rel="icon" href="../assets/icon/favicon.ico" />
+    <link rel="stylesheet" href="findclinic.css" />
+    <script src="findclinic.js"defer></script>
+  </head>
+
+  <body>
+    
+    <header class="dashboard-header">
+      <div class="header-left">
+        <div class="info-left-header">
+          <span id="info-home">⌂</span>
+          <span id="info-separator">/</span>
+          <span id="info-current">Find Clinic</span>
+        </div>
+
+        <h1 id="dashboard-title">Find Clinic</h1>
+      </div>
+
+      <button class="menu-button" id="menu-button">☰</button>
+
+      <div class="header-right">
+        <div class="search-box">
+          <span id="search-icon">🔎</span>
+          <input
+            type="text"
+            class="search-input"
+            id="header-search"
+            placeholder="Type here..."
+          />
+        </div>
+
+        <button class="header-button" id="logout-button">
+          <a href="../LoginPage/login.html">Logout</a>
+        </button>
+
+        <button class="icon-button" id="settings-button" title="Settings">
+          ⚙
+        </button>
+
+        <button
+          class="icon-button"
+          id="notification-button"
+          title="Notifications"
+        >
+          🔔
+        </button>
+      </div>
+    </header>
+
+    
+    <aside class="sidebar-navigation" id="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-mark">
+          M
+          <span>HUB</span>
+        </div>
+
+        <span id="brand-name">MyPatientHUB</span>
+      </div>
+
+      <nav>
+        <a href="../index.html" class="nav-item">
+          <span class="nav-icon">▣</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">▤</span>
+          <span class="nav-label">Appointments</span>
+        </a>
+
+        <a href="../FindDoctorpage/finddoctor.html" class="nav-item">
+          <span class="nav-icon">♙</span>
+          <span class="nav-label">Find Doctor</span>
+        </a>
+
+        <a href="findclinic.html" class="nav-item active">
+          <span class="nav-icon">🏥</span>
+          <span class="nav-label">Find Clinic</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">💬</span>
+          <span class="nav-label">Chat</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">🛒</span>
+          <span class="nav-label">Find MarketPlace</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">💊</span>
+          <span class="nav-label">Find Pharmacy</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">👥</span>
+          <span class="nav-label">My Dependents</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">👤</span>
+          <span class="nav-label">My Account</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">⚙</span>
+          <span class="nav-label">Settings</span>
+        </a>
+      </nav>
+
+      <button class="help-button" id="help-button">?</button>
+    </aside>
+
+    
+    <main>
+      <section class="clinic-section">
+        <div class="page-heading">
+          <h2>Find Clinic</h2>
+
+          <p>Find the right clinic for your healthcare needs.</p>
+        </div>
+
+      
+        <div class="clinic-search-card">
+          <div class="search-field">
+            <label for="clinic-search"> Clinic Name </label>
+
+            <input
+              type="text"
+              id="clinic-search"
+              placeholder="Search clinic..."
+            />
+          </div>
+
+          <div class="search-field">
+            <label for="location-filter"> Location </label>
+
+            <select id="location-filter">
+              <option value="all">All Locations</option>
+
+              <option value="Kabul">Kabul</option>
+
+              <option value="Herat">Herat</option>
+
+              <option value="Mazar-e-Sharif">Mazar-e-Sharif</option>
+
+              <option value="Kandahar">Kandahar</option>
+            </select>
+          </div>
+
+          <button id="search-clinic-button">Search Clinic</button>
+        </div>
+
+       
+        <div class="results-header">
+          <div>
+            <h3>Available Clinics</h3>
+
+            <p>Find clinics that match your needs.</p>
+          </div>
+
+          <span id="results-count"> 4 Clinics </span>
+        </div>
+
+       
+        <div class="clinic-grid" id="clinic-grid">
+        
+          <div
+            class="clinic-card"
+            data-clinic="Kabul Medical Center"
+            data-location="Kabul"
+          >
+            <div class="clinic-card-top">
+              <div class="clinic-icon">🏥</div>
+
+              <span class="verified"> ✓ Verified </span>
+            </div>
+
+            <h3>Kabul Medical Center</h3>
+
+            <p class="clinic-location">📍 Kabul</p>
+
+            <div class="clinic-services">
+              <span>General Medicine</span>
+              <span>Laboratory</span>
+              <span>Consultation</span>
+            </div>
+
+            <div class="clinic-card-bottom">
+              <div class="rating">⭐ 4.8</div>
+
+              <button class="view-clinic">View Clinic</button>
+            </div>
+          </div>
+
+       
+          <div
+            class="clinic-card"
+            data-clinic="City Health Clinic"
+            data-location="Kabul"
+          >
+            <div class="clinic-card-top">
+              <div class="clinic-icon">🏥</div>
+
+              <span class="verified"> ✓ Verified </span>
+            </div>
+
+            <h3>City Health Clinic</h3>
+
+            <p class="clinic-location">📍 Kabul</p>
+
+            <div class="clinic-services">
+              <span>Family Medicine</span>
+              <span>Pediatrics</span>
+              <span>Pharmacy</span>
+            </div>
+
+            <div class="clinic-card-bottom">
+              <div class="rating">⭐ 4.6</div>
+
+              <button class="view-clinic">View Clinic</button>
+            </div>
+          </div>
+
+      
+          <div
+            class="clinic-card"
+            data-clinic="Herat Family Clinic"
+            data-location="Herat"
+          >
+            <div class="clinic-card-top">
+              <div class="clinic-icon">🏥</div>
+
+              <span class="verified"> ✓ Verified </span>
+            </div>
+
+            <h3>Herat Family Clinic</h3>
+
+            <p class="clinic-location">📍 Herat</p>
+
+            <div class="clinic-services">
+              <span>Family Medicine</span>
+              <span>Pediatrics</span>
+              <span>Dental</span>
+            </div>
+
+            <div class="clinic-card-bottom">
+              <div class="rating">⭐ 4.7</div>
+
+              <button class="view-clinic">View Clinic</button>
+            </div>
+          </div>
+
+       
+          <div
+            class="clinic-card"
+            data-clinic="Mazar Health Center"
+            data-location="Mazar-e-Sharif"
+          >
+            <div class="clinic-card-top">
+              <div class="clinic-icon">🏥</div>
+
+              <span class="verified"> ✓ Verified </span>
+            </div>
+
+            <h3>Mazar Health Center</h3>
+
+            <p class="clinic-location">📍 Mazar-e-Sharif</p>
+
+            <div class="clinic-services">
+              <span>Diagnostics</span>
+              <span>Laboratory</span>
+              <span>General Medicine</span>
+            </div>
+
+            <div class="clinic-card-bottom">
+              <div class="rating">⭐ 4.5</div>
+
+              <button class="view-clinic">View Clinic</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+   
+    <footer class="dashboard-footer">
+      <p id="copyright-text">
+        © 2026
+        <strong>MyPatientHUB</strong>
+        for a better web.
+      </p>
+
+      <div id="footer-navigation">
+        <a href="../index.html">Dashboard</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </footer>
