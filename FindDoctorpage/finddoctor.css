@@ -1,18 +1,23 @@
+
 .find-doctor-main {
 margin-left: 255px;
 padding-top: 85px;
-min-height: calc(100vh - 85px);
+min-height: calc(100vh - 85px); 
+/* why to use the calc(100vh - 85px); I mean explain calc what is and why to use and what are the values it got  */
 }
 
 .doctor-hero {
 position: relative;
+/* why to choose position relative? what it does? */
 min-height: 387px;
 margin: 35px 30px 0;
 border-radius: 20px;
 overflow: hidden;
+/* what is overflow ? */
 display: flex;
 align-items: center;
 justify-content: center;
+
 background: radial-gradient(
 ellipse at center,
 #e40078 0%,
@@ -22,33 +27,13 @@ ellipse at center,
 );
 color: #ffffff;
 }
+/*  give me a full explain of the background properity and value  */
 
-.hero-wave {
-position: absolute;
-border: 35px solid rgba(255, 255, 255, 0.07);
-border-radius: 50%;
-pointer-events: none;
-}
-
-.wave-one {
-width: 900px;
-height: 500px;
-left: -350px;
-top: 60px;
-transform: rotate(-18deg);
-}
-
-.wave-two {
-width: 950px;
-height: 500px;
-right: -350px;
-top: -160px;
-transform: rotate(18deg);
-}
 
 .doctor-hero-content {
 position: relative;
 z-index: 5;
+/* why choose the z-index to 5? */
 width: 100%;
 padding: 30px;
 text-align: center;
@@ -104,6 +89,7 @@ font-size: 15px;
 font-weight: 700;
 cursor: pointer;
 transition: all 0.3s ease;
+/* what means all 0.3 ease; */
 }
 
 .doctor-search-button:hover {
@@ -130,6 +116,7 @@ text-align: center;
 .services-grid {
 display: grid;
 grid-template-columns: repeat(2, 1fr);
+/* explain this completely , It is my first time to face with this */
 gap: 32px;
 }
 
@@ -148,7 +135,7 @@ padding: 18px;
 border: 1px solid #e8e8e8;
 border-radius: 7px;
 background: #ffffff;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .service-icon {
@@ -188,6 +175,7 @@ font-weight: 700;
 
 .service-text {
 flex: 1;
+/* what is this? flex: 1; why it does not have any thing like display or direction only flex? and only 1 why not px or em ? */
 min-width: 0;
 }
 
@@ -209,6 +197,7 @@ line-height: 1.55;
 width: 35px;
 height: 35px;
 flex-shrink: 0;
+/* what is this ? flex-shrink */
 border: none;
 background: transparent;
 color: #777777;
@@ -237,6 +226,9 @@ padding-bottom: 18px;
 .service-item.open .dropdown-button {
 transform: rotate(180deg);
 }
+/* explain this too the .service-item.open .dropdown-button {
+transform: rotate(180deg);
+} */
 
 .service-dropdown p {
 color: #67748e;
@@ -298,6 +290,10 @@ transition: transform 0.3s ease;
 .specialty-item.open .specialty-arrow {
 transform: rotate(180deg);
 }
+/* explain .specialty-item.open .specialty-arrow {
+transform: rotate(180deg);
+} */
+
 
 .specialty-content {
 max-height: 0;
@@ -322,6 +318,12 @@ line-height: 1.6;
 .find-doctor-main + .dashboard-footer {
 margin-left: 255px;
 }
+
+/* 
+explain this too
+.find-doctor-main + .dashboard-footer {
+margin-left: 255px;
+} */
 
 @media (max-width: 1100px) {
 .doctor-search {

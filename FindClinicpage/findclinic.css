@@ -1,4 +1,4 @@
-
+/* this part is taken from AI becuase of luck of time */
 * {
   margin: 0;
   padding: 0;
@@ -419,7 +419,7 @@ main {
   font-size: 12px;
   font-weight: 600;
 }
-
+/* explain the bellow part  */
 .search-field input,
 .search-field select {
   width: 100%;
@@ -483,7 +483,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   margin-bottom: 18px;
 }
 
@@ -519,7 +518,7 @@ main {
 
 .clinic-grid {
   display: grid;
-
+/* explain this part , I do not know what grid-templete-column is */
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 20px;
@@ -724,7 +723,7 @@ main {
 #footer-navigation a:hover {
   color: #e40078;
 }
-
+/* explain me about the webkit and all of the used code I do not know it  */
 
 .sidebar-navigation::-webkit-scrollbar {
   width: 5px;
@@ -739,7 +738,7 @@ main {
   border-radius: 10px;
 }
 
-
+/* all of this part */
 @media (max-width: 768px) {
   .dashboard-header {
     left: 0;
